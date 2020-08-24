@@ -768,7 +768,7 @@ def update():
     stuff_to_update = ['bomber.py', '.version']
     for fl in stuff_to_update:
         dat = urllib.request.urlopen(
-            "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/" + fl).read()
+            "https://raw.githubusercontent.com/ohyeahiamunnamed/TBomb/master/" + fl).read()
         file = open(fl, 'wb')
         file.write(dat)
         file.close()
@@ -788,7 +788,7 @@ except Exception:
     exit()
 print('\tChecking For Updates...')
 ver = urllib.request.urlopen(
-    "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.version").read().decode('utf-8')
+    "https://raw.githubusercontent.com/ohyeahiamunnamed/TBomb/master/.version").read().decode('utf-8')
 verl = ''
 try:
     verl = open(".version", 'r').read()
@@ -802,7 +802,7 @@ print("Your Version is Up-To-Date")
 print('\n\n\t\t\tStarting TBomb...\n\n')
 try:
     noti = urllib.request.urlopen(
-        "https://raw.githubusercontent.com/TheSpeedX/TBomb/master/.notify").read().decode('utf-8')
+        "https://raw.githubusercontent.com/ohyeahiamunnamed/TBomb/master/.notify").read().decode('utf-8')
     noti = noti.upper().strip()
     if len(noti) > 10:
         print('\n\n\tNOTIFICATION: ' + noti + '\n\n')
@@ -836,11 +836,11 @@ try:
 except Exception:
     type = 0
 if type == 1:
-    nm = int(input("Enter Number of Calls To Send(Maximum 15): "))
-    if nm > 15:
+    nm = int(input("Enter Number of Calls To Send(Maximum 999999): "))
+    if nm > 999999:
         print("\t\tYou Have Entered " + str(nm) +
-              ".\n\tNormalizing Value To 15")
-        nm = 15
+              ".\n\tNormalizing Value To 999999")
+        nm = 999999
     dl = float(input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
 elif type == 0:
     if cc == "91":
@@ -853,9 +853,9 @@ elif type == 0:
             input("Enter Delay time (in seconds) [Recommended 10 sec ] : "))
 maxlim = 0
 if cc == "91":
-    maxlim = 500
+    maxlim = 99999999
 else:
-    maxlim = 100
+    maxlim = 99999999
 if nm > maxlim:
     print('\n\n\tSorry Due To Misuse Of This Script We Only Provide ' +
           str(maxlim) + ' SMS At Once...\n\n')
